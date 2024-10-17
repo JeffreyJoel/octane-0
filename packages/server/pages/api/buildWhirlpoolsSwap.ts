@@ -1,13 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import base58 from 'bs58';
 import BN from 'bn.js';
-import Decimal from 'decimal.js';
 
 import { PublicKey } from '@solana/web3.js';
 import { getAssociatedTokenAddress } from '@solana/spl-token';
-import { Percentage } from '@orca-so/common-sdk';
 
-import { buildWhirlpoolsSwapToSOL, core } from '@solana/octane-core';
+import { FeeOptions, buildWhirlpoolsSwapToSOL } from '@solana/octane-core';
 import {
     cache,
     connection,
@@ -46,25 +44,32 @@ export default async function (request: NextApiRequest, response: NextApiRespons
         return;
     }
 
-    let slippingTolerance: Percentage;
-    try {
-        slippingTolerance = Percentage.fromDecimal(
-            new Decimal(request.body?.slippingTolerance)
-        );
-    } catch {
-        response.status(400).send({ status: 'error', message: 'missing or invalid "slippingTolerance" parameter' });
-        return;
-    }
+    const tokenFee = config.endpoints.whirlpoolsSwap.tokens
+        .map((token) => ({
+            fee: BigInt(token.fee),
+            decimals: token.decimals,
+            mint: new PublicKey(token.mint),
+            account: new PublicKey(token.account),
+            transferFeeBp: token.transferFeeBp,
+            burnFeeBp: token.burnFeeBp,
+        }))
+        .find((tokenFee) => tokenFee.mint.equals(sourceMint));
 
-    const tokenFees = (
-        config.endpoints.whirlpoolsSwap.tokens.map((token) => core.TokenFee.fromSerializable(token))
-        .filter((tokenFee) => tokenFee.mint.equals(sourceMint))
-    );
-    if (tokenFees.length === 0) {
-        response.status(400).send({ status: 'error', message: 'this source mint isn\'t supported'});
-        return;
+    // if (tokenFees.length === 0) {
+    //     response.status(400).send({ status: 'error', message: "this source mint isn't supported" });
+    //     return;
+    // }
+
+    let feeOptions: FeeOptions | undefined;
+    if (tokenFee) {
+        feeOptions = {
+            amount: Number(tokenFee.fee),
+            sourceAccount: await getAssociatedTokenAddress(sourceMint, user),
+            destinationAccount: tokenFee.account,
+            burnFeeBp: tokenFee.burnFeeBp,
+            transferFeeBp: tokenFee.transferFeeBp,
+        };
     }
-    const tokenFee = tokenFees[0];
 
     try {
         const { transaction, quote, messageToken } = await buildWhirlpoolsSwapToSOL(
@@ -73,40 +78,32 @@ export default async function (request: NextApiRequest, response: NextApiRespons
             user,
             sourceMint,
             amount,
-            slippingTolerance,
             cache,
             3000,
-            {
-                amount: Number(tokenFee.fee),
-                sourceAccount: await getAssociatedTokenAddress(sourceMint, user),
-                destinationAccount: tokenFee.account
-            }
+            feeOptions ?? undefined
         );
 
-//         if (config.returnSignature !== undefined) {
-//             if (!await isReturnedSignatureAllowed(
-//                 request,
-//                 config.returnSignature as ReturnSignatureConfigField
-//             )) {
-//                 response.status(400).send({ status: 'error', message: 'anti-spam check failed' });
-//                 return;
-//             }
-//             transaction.sign(ENV_SECRET_KEYPAIR);
-//             response.status(200).send({
-//                 status: 'ok',
-//                 transaction: base58.encode(transaction.serialize({verifySignatures: false})),
-//                 quote,
-//                 messageToken
-//             });
-//             return;
-//         }
+        if (config.returnSignature !== null) {
+            if (!(await isReturnedSignatureAllowed(request, config.returnSignature as ReturnSignatureConfigField))) {
+                response.status(400).send({ status: 'error', message: 'anti-spam check failed' });
+                return;
+            }
+            transaction.sign([ENV_SECRET_KEYPAIR]);
+            response.status(200).send({
+                status: 'ok',
+                transaction: base58.encode(transaction.serialize()),
+                quote,
+                messageToken,
+            });
+            return;
+        }
 
         // Respond with the confirmed transaction signature
         response.status(200).send({
             status: 'ok',
-            transaction: base58.encode(transaction.serialize({verifySignatures: false})),
+            transaction: base58.encode(transaction.serialize()),
             quote,
-            messageToken
+            messageToken,
         });
     } catch (error) {
         let message = '';
