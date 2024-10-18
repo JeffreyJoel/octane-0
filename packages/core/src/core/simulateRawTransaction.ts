@@ -24,7 +24,6 @@ export async function simulateRawTransaction(
         connection,
         Transaction.from(rawTransaction),
         undefined,
-        // @ts-expect-error
         includeAccounts
     );
     if (simulated.value.err) throw new Error('Simulation error');

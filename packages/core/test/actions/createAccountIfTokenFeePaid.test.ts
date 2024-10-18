@@ -44,7 +44,9 @@ if (process.env.TEST_LIVE) {
                 mint,
                 feePayerKeypair.publicKey
             );
-            baseAllowedTokens = [new TokenFee(mint, feePayerTokenAccount.address, 9, BigInt(100))];
+            baseAllowedTokens = [
+                new TokenFee(mint, feePayerTokenAccount.address, 9, BigInt(100)),
+            ];
         });
 
         let sourceOwner: Keypair;
