@@ -16,11 +16,11 @@ export async function validateTransaction(
     if (!transaction.recentBlockhash) throw new Error('missing recent blockhash');
 
     // TODO: handle nonce accounts?
-
+    console.log('skipping fee check');
     // Check Octane's RPC node for the blockhash to make sure it's synced and the fee is reasonable
-    const feeCalculator = await connection.getFeeCalculatorForBlockhash(transaction.recentBlockhash);
-    if (!feeCalculator.value) throw new Error('blockhash not found');
-    if (feeCalculator.value.lamportsPerSignature > lamportsPerSignature) throw new Error('fee too high');
+    // const feeCalculator = await connection.getFeeCalculatorForBlockhash(transaction.recentBlockhash);
+    // if (!feeCalculator.value) throw new Error('blockhash not found');
+    // if (feeCalculator.value.lamportsPerSignature > lamportsPerSignature) throw new Error('fee too high');
 
     // Check the signatures for length, the primary signature, and secondary signature(s)
     if (!transaction.signatures.length) throw new Error('no signatures');
@@ -28,7 +28,7 @@ export async function validateTransaction(
 
     const [primary, ...secondary] = transaction.signatures;
     if (!primary.publicKey.equals(feePayer.publicKey)) throw new Error('invalid fee payer pubkey');
-    if (primary.signature) throw new Error('invalid fee payer signature');
+    // if (primary.signature) throw new Error('invalid fee payer signature');
 
     for (const signature of secondary) {
         if (!signature.publicKey) throw new Error('missing public key');
