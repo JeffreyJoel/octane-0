@@ -83,20 +83,20 @@ export default async function (request: NextApiRequest, response: NextApiRespons
             feeOptions ?? undefined
         );
 
-        if (config.returnSignature !== null) {
-            if (!(await isReturnedSignatureAllowed(request, config.returnSignature as ReturnSignatureConfigField))) {
-                response.status(400).send({ status: 'error', message: 'anti-spam check failed' });
-                return;
-            }
-            transaction.sign([ENV_SECRET_KEYPAIR]);
-            response.status(200).send({
-                status: 'ok',
-                transaction: base58.encode(transaction.serialize()),
-                quote,
-                messageToken,
-            });
-            return;
-        }
+        // if (config.returnSignature !== null) {
+        //     if (!(await isReturnedSignatureAllowed(request, config.returnSignature as ReturnSignatureConfigField))) {
+        //         response.status(400).send({ status: 'error', message: 'anti-spam check failed' });
+        //         return;
+        //     }
+        //     transaction.sign([ENV_SECRET_KEYPAIR]);
+        //     response.status(200).send({
+        //         status: 'ok',
+        //         transaction: base58.encode(transaction.serialize()),
+        //         quote,
+        //         messageToken,
+        //     });
+        //     return;
+        // }
 
         // Respond with the confirmed transaction signature
         response.status(200).send({
