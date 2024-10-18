@@ -1,5 +1,5 @@
 {
-    "rpcUrl": "https://solana-devnet.g.alchemy.com/v2/GNmnmoS8nnwSfEndy9r8NZmnKyAuPxEd",
+    "rpcUrl": "https://devnet.helius-rpc.com/?api-key=b278868c-fb5e-4e46-909a-36c357322a05",
     "maxSignatures": 2,
     "lamportsPerSignature": 5000,
     "corsOrigin": true,
@@ -9,9 +9,9 @@
             "tokens": [
                 {
                     "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
-                    "account": "HZ7keg5GGi8aiuD1wYNqkhfaVwQRJwGQi7xmmZHWu3NE",
+                    "account": "ABQpKhjd9eDdumriFV4onV11LoHym7aJdBxhhSraYnMp",
                     "decimals": 9,
-                    "fee": 10000000
+                    "fee": 10000
                 }
             ]
         },
@@ -19,9 +19,9 @@
             "tokens": [
                 {
                     "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
-                    "account": "HZ7keg5GGi8aiuD1wYNqkhfaVwQRJwGQi7xmmZHWu3NE",
+                    "account": "ABQpKhjd9eDdumriFV4onV11LoHym7aJdBxhhSraYnMp",
                     "decimals": 9,
-                    "fee": 10000000,
+                    "fee": 10000,
                     "burnFeeBp": 250,
                     "transferFeeBp": 250
                 }
@@ -31,9 +31,9 @@
             "tokens": [
                 {
                     "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
-                    "account": "HZ7keg5GGi8aiuD1wYNqkhfaVwQRJwGQi7xmmZHWu3NE",
+                    "account": "ABQpKhjd9eDdumriFV4onV11LoHym7aJdBxhhSraYnMp",
                     "decimals": 9,
-                    "fee": 10000000,
+                    "fee": 10000,
                     "burnFeeBp": 250,
                     "transferFeeBp": 250
                 }
