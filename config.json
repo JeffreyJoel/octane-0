@@ -11,31 +11,13 @@
                     "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
                     "account": "ABQpKhjd9eDdumriFV4onV11LoHym7aJdBxhhSraYnMp",
                     "decimals": 9,
-                    "fee": 10000
-                }
-            ]
-        },
-        "createAssociatedTokenAccount": {
-            "tokens": [
+                    "fee": 50000
+                },
                 {
-                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
-                    "account": "ABQpKhjd9eDdumriFV4onV11LoHym7aJdBxhhSraYnMp",
+                    "mint": "HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr",
+                    "account": "6qqaStXvBVtLB97XTfXc4dmL4e3HkVDBMGZMPNsP22wL",
                     "decimals": 9,
-                    "fee": 10000,
-                    "burnFeeBp": 250,
-                    "transferFeeBp": 250
-                }
-            ]
-        },
-        "whirlpoolsSwap": {
-            "tokens": [
-                {
-                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
-                    "account": "ABQpKhjd9eDdumriFV4onV11LoHym7aJdBxhhSraYnMp",
-                    "decimals": 9,
-                    "fee": 10000,
-                    "burnFeeBp": 250,
-                    "transferFeeBp": 250
+                    "fee": 50000
                 }
             ]
         }
