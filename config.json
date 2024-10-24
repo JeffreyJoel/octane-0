@@ -21,5 +21,30 @@
                 }
             ]
         }
+        ,
+        "createAssociatedTokenAccount": {
+            "tokens": [
+                {
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "account": "ABQpKhjd9eDdumriFV4onV11LoHym7aJdBxhhSraYnMp",
+                    "decimals": 9,
+                    "fee": 100000,
+                    "burnFeeBp": 250,
+                    "transferFeeBp": 250
+                }
+            ]
+        },
+        "whirlpoolsSwap": {
+            "tokens": [
+                {
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "account": "ABQpKhjd9eDdumriFV4onV11LoHym7aJdBxhhSraYnMp",
+                    "decimals": 9,
+                    "fee": 100000,
+                    "burnFeeBp": 250,
+                    "transferFeeBp": 250
+                }
+            ]
+        }
     }
 }
