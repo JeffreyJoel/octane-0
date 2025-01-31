@@ -9,7 +9,7 @@
             "tokens": [
                 {
                     "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
-                    "account": "ABQpKhjd9eDdumriFV4onV11LoHym7aJdBxhhSraYnMp",
+                    "account": "5qvaQh5zwNdUA2AcZZdHqQ9PqJVLXYGiyyLxrqzwwy7G",
                     "decimals": 9,
                     "fee": 50000
                 },
@@ -26,7 +26,7 @@
             "tokens": [
                 {
                     "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
-                    "account": "ABQpKhjd9eDdumriFV4onV11LoHym7aJdBxhhSraYnMp",
+                    "account": "5qvaQh5zwNdUA2AcZZdHqQ9PqJVLXYGiyyLxrqzwwy7G",
                     "decimals": 9,
                     "fee": 100000,
                     "burnFeeBp": 250,
@@ -38,7 +38,7 @@
             "tokens": [
                 {
                     "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
-                    "account": "ABQpKhjd9eDdumriFV4onV11LoHym7aJdBxhhSraYnMp",
+                    "account": "5qvaQh5zwNdUA2AcZZdHqQ9PqJVLXYGiyyLxrqzwwy7G",
                     "decimals": 9,
                     "fee": 100000,
                     "burnFeeBp": 250,
