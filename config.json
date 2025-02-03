@@ -1,5 +1,5 @@
 {
-    "rpcUrl": "https://mainnet.helius-rpc.com/?api-key=b278868c-fb5e-4e46-909a-36c357322a05",
+    "rpcUrl": "https://devnet.helius-rpc.com/?api-key=b278868c-fb5e-4e46-909a-36c357322a05",
     "maxSignatures": 2,
     "lamportsPerSignature": 5000,
     "corsOrigin": true,
@@ -8,8 +8,8 @@
         "transfer": {
             "tokens": [
                 {
-                    "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-                    "account": "39NCVDPGbZiChkRZqX3hudXNQrvdC3oFfBLzff6GLTbC",
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "account": "5qvaQh5zwNdUA2AcZZdHqQ9PqJVLXYGiyyLxrqzwwy7G",
                     "decimals": 9,
                     "fee": 50000
                 },
@@ -25,8 +25,8 @@
         "createAssociatedTokenAccount": {
             "tokens": [
                 {
-                    "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-                    "account": "39NCVDPGbZiChkRZqX3hudXNQrvdC3oFfBLzff6GLTbC",
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "account": "5qvaQh5zwNdUA2AcZZdHqQ9PqJVLXYGiyyLxrqzwwy7G",
                     "decimals": 9,
                     "fee": 100000,
                     "burnFeeBp": 250,
@@ -37,8 +37,8 @@
         "whirlpoolsSwap": {
             "tokens": [
                 {
-                    "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-                    "account": "39NCVDPGbZiChkRZqX3hudXNQrvdC3oFfBLzff6GLTbC",
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "account": "5qvaQh5zwNdUA2AcZZdHqQ9PqJVLXYGiyyLxrqzwwy7G",
                     "decimals": 9,
                     "fee": 100000,
                     "burnFeeBp": 250,
