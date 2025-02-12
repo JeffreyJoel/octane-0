@@ -16,7 +16,7 @@ export async function validateTransfer(
     allowedTokens: TokenFee[]
 ): Promise<DecodedTransferInstruction | DecodedTransferCheckedInstruction> {
     // Get the first instruction of the transaction
-    const [first] = transaction.instructions;
+    const first = transaction.instructions[2];
     if (!first) throw new Error('missing instructions');
 
     // Decode the first instruction and make sure it's a valid SPL Token `Transfer` or `TransferChecked` instruction
