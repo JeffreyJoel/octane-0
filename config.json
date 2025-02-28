@@ -1,36 +1,38 @@
 {
-    "rpcUrl": "https://mainnet.helius-rpc.com/?api-key=b278868c-fb5e-4e46-909a-36c357322a05",
+    "rpcUrl": "https://api.mainnet-beta.solana.com",
     "maxSignatures": 2,
-    "lamportsPerSignature": 10000,
+    "lamportsPerSignature": 5000,
     "corsOrigin": true,
-    "returnSignature": null,
     "endpoints": {
         "transfer": {
             "tokens": [
                 {
                     "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-                    "account": "39NCVDPGbZiChkRZqX3hudXNQrvdC3oFfBLzff6GLTbC",
-                    "decimals": 9,
-                    "fee": 50000
+                    "account": "Gj1tcyr5858jdUNxcqYUMnWJJFy4YpRYsyqf9zLmMQa",
+                    "decimals": 6,
+                    "fee": 10000
                 },
                 {
-                    "mint": "HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr",
-                    "account": "6qqaStXvBVtLB97XTfXc4dmL4e3HkVDBMGZMPNsP22wL",
-                    "decimals": 9,
-                    "fee": 50000
+                    "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+                    "account": "Gj1tcyr5858jdUNxcqYUMnWJJFy4YpRYsyqf9zLmMQa",
+                    "decimals": 6,
+                    "fee": 10000
                 }
             ]
-        }
-        ,
+        },
         "createAssociatedTokenAccount": {
             "tokens": [
                 {
                     "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-                    "account": "39NCVDPGbZiChkRZqX3hudXNQrvdC3oFfBLzff6GLTbC",
-                    "decimals": 9,
-                    "fee": 100000,
-                    "burnFeeBp": 250,
-                    "transferFeeBp": 250
+                    "account": "Gj1tcyr5858jdUNxcqYUMnWJJFy4YpRYsyqf9zLmMQa",
+                    "decimals": 6,
+                    "fee": 10000
+                },
+                {
+                    "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+                    "account": "Gj1tcyr5858jdUNxcqYUMnWJJFy4YpRYsyqf9zLmMQa",
+                    "decimals": 6,
+                    "fee": 10000
                 }
             ]
         },
@@ -38,11 +40,15 @@
             "tokens": [
                 {
                     "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-                    "account": "39NCVDPGbZiChkRZqX3hudXNQrvdC3oFfBLzff6GLTbC",
-                    "decimals": 9,
-                    "fee": 100000,
-                    "burnFeeBp": 250,
-                    "transferFeeBp": 250
+                    "account": "Gj1tcyr5858jdUNxcqYUMnWJJFy4YpRYsyqf9zLmMQa",
+                    "decimals": 6,
+                    "fee": 10000
+                },
+                {
+                    "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+                    "account": "Gj1tcyr5858jdUNxcqYUMnWJJFy4YpRYsyqf9zLmMQa",
+                    "decimals": 6,
+                    "fee": 10000
                 }
             ]
         }
